@@ -1,5 +1,6 @@
 :root {
-    --header-bg: #15616D;
+    --header-bg: #063734;
+    --bs-primary: #0B7A75;
 }
 
 /* Box sizing rules */
@@ -23,4 +24,9 @@ code {
 
 h1 {
     margin: 16px 0;
+}
+
+:global .btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
 }

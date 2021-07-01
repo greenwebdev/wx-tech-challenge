@@ -40,7 +40,7 @@ const Cart = () => {
                 }
                 {hasCheckedOut && <p className="alert alert-success" role="alert">Your order has been successfully submitted. Thanks for shopping with us!</p>}
                 {checkoutError && <p className="alert alert-danger" role="alert">{checkoutError}</p>}
-                {(!hasCheckedOut && cartItems?.length === 0) && <p>Your cart is empty. Browse our <Link to="/products">products</Link> to add something.</p>}
+                {(!hasCheckedOut && cartItems?.length === 0) && <p>Your cart is empty. Browse our <Link to="/">products</Link> to add something.</p>}
             </div>
         </div>
     );
