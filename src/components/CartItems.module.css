@@ -28,24 +28,6 @@
     text-align: right;
 }
 
-.cartFooter {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-}
-
-.cartTotal {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
-    padding: 5px 0;
-}
-
-.btnCheckout {
-    width: 150px;
-}
 
 @media (min-width: 768px) {
     .name {

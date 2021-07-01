@@ -21,10 +21,13 @@ export default function reducer(state = initialState, action = {}) {
 
             let newState = {
                 ...state,
+                // Reset the flag tracking if we have checked out if the cart was empty
                 hasCheckedOut: state.items.length > 0 ? state.hasCheckedOut : false
             };
+
             const existingItemIndex = state.items.findIndex(item => item.productId === product?.productId);
 
+            // Increment the existing quantity if this item is already in the cart
             if (existingItemIndex !== -1) {
                 newState.items[existingItemIndex].qty += qty;
             } else {
@@ -69,6 +72,7 @@ export default function reducer(state = initialState, action = {}) {
                 ...state,
                 loading: false,
                 hasCheckedOut: false,
+                // This would ideally be a server error if the API returned one
                 error: `Oops, something went wrong and we couldn't process your order. Please try again later.`
             };
         default:
@@ -100,7 +104,6 @@ export const checkout = cart => dispatch => {
         body: JSON.stringify(cart)
     })
         .then(response => {
-            console.info('checkout response', response);
             if (response?.ok) {
                 dispatch({
                     type: RESPONSE
@@ -112,7 +115,6 @@ export const checkout = cart => dispatch => {
             }
         })
         .catch(error => {
-            console.info('checkout error', error);
             dispatch({
                 type: ERROR,
                 payload: {

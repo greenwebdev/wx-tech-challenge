@@ -7,20 +7,17 @@ const ERROR = 'LIST_PRODUCTS_ERROR';
 const initialState = {
     items: [],
     loading: false,
-    hasLoaded: false,
     error: null
 };
 
 // Reducer
 export default function reducer(state = initialState, action = {}) {
-    console.info('action', action);
     switch (action.type) {
         case REQUEST:
             return {
                 ...state,
                 items: [],
                 loading: true,
-                hasLoaded: false,
                 error: null
             };
         case RESPONSE:
@@ -28,7 +25,6 @@ export default function reducer(state = initialState, action = {}) {
                 ...state,
                 items: action.payload?.items ?? [],
                 loading: false,
-                hasLoaded: true,
                 error: null
             };
         case ERROR:
@@ -36,7 +32,6 @@ export default function reducer(state = initialState, action = {}) {
                 ...state,
                 items: [],
                 loading: false,
-                hasLoaded: true,
                 error: action.payload?.error
             };
         default:

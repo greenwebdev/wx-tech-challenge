@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
+import CartItems from 'components/CartItems';
 import { formatCurrencyAud } from 'util/currency';
 import { Link } from 'react-router-dom';
 import { checkout } from 'modules/cart';
@@ -25,16 +26,7 @@ const Cart = () => {
                 <h1>Your Cart</h1>
                 {cartItems?.length > 0 &&
                     <>
-                        <ul className={styles.cartItemList}>
-                            {cartItems?.map(cartItem => 
-                                <li className={styles.cartItem} key={`cartItem-${cartItem?.productId}`}>
-                                    <div className={styles.name}>{cartItem?.name}</div>
-                                    <span className={styles.price}>{formatCurrencyAud(cartItem?.price)}ea</span>
-                                    <div className={styles.qty}>x{cartItem?.qty}</div>
-                                    <span className={styles.linePrice}>{formatCurrencyAud(cartItem?.price * cartItem?.qty)}</span>
-                                </li>
-                            )}
-                        </ul>
+                        <CartItems cartItems={cartItems} />
                         <div className={styles.cartFooter}>
                             <div className={styles.cartTotal}>
                                 <strong>Total:</strong>

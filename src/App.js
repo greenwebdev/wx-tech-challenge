@@ -1,5 +1,4 @@
 import Routes from 'Routes';
-import './App.css';
 
 import styles from './App.module.css';
 
