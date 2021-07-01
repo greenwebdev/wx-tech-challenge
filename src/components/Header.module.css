@@ -1,0 +1,48 @@
+.wrap {
+    background-color: var(--header-bg);
+    color: #fff;
+}
+
+.navLayout {
+    align-items: center;
+    display: flex;
+    padding: 8px 0;
+}
+
+.nav {
+    flex: 1;
+}
+
+.navItems {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navItems > li {
+    padding: 0 12px;
+}
+
+.navItems > li > a {
+    color: #fff;
+}
+
+.navItems > li:first-child {
+    padding: 0 12px 0 0;
+}
+
+.cartSummary > a {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.cartLabel {
+    text-transform: uppercase;
+}
+
+.cartTotal {
+
+}

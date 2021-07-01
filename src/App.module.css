@@ -1,0 +1,14 @@
+:root {
+    --header-bg: #15616D;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.app {
+    /* text-align: center; */
+}
