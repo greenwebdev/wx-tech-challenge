@@ -30,3 +30,10 @@ h1 {
     background-color: var(--bs-primary);
     border-color: var(--bs-primary);
 }
+
+:global .btn-primary:hover,
+:global .btn-primary:active,
+:global .btn-primary:focus {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
